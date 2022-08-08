@@ -10,7 +10,7 @@ import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 public class Constants {
     // private constructor to avoid instantiation
     private Constants(){}
-    
+    private static Constants Constants = null;
     private static String ACCESS_KEY = "";
     private static String SECERET_KEY = "";
     static AWSCredentials aac;
