@@ -38,6 +38,12 @@ jobs:
         id: package
         working-directory: ${{ env.applicationfolder }}
         run: $GITHUB_WORKSPACE/.github/scripts/build.sh
+        
+      - name: Artifacts for codescan action
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-file
+          path: ${{ env.applicationfolder }}/target/*.war        
 
       - name: Upload Artifact to s3
         working-directory: ${{ env.applicationfolder }}/target
